@@ -16,7 +16,8 @@ const StudentDetail = () => {
     // Backend currently exposes all-students and course-specific lists.
     // We will fetch all and find by id.
     axios
-      .get('http://localhost:4200/student/all-students', {
+      .get('https://ims-backend-vsr9.onrender.com/student/all-students', {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }

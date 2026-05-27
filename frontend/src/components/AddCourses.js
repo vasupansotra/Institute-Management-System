@@ -24,11 +24,17 @@ const AddCourses = () => {
     formData.append('endDate', endDate);
     formData.append('image', image);
 
-    axios.post('http://localhost:4200/course/add-course', formData, {
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      }
-    })
+    axios
+      .post(
+        'https://ims-backend-vsr9.onrender.com/course/add-course',
+        formData,
+        {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+          }
+        }
+      )
+
     .then(res => {
       setLoading(false);
       toast.success('Course added successfully!');

@@ -9,8 +9,10 @@ const Students = () => {
 
   const getStudents = () => {
     const url = courseIdFilter
-      ? `http://localhost:4200/student/all-students/${courseIdFilter}`
-      : 'http://localhost:4200/student/all-students';
+      ? `https://ims-backend-vsr9.onrender.com/student/all-students/${courseIdFilter}`
+      : 'https://ims-backend-vsr9.onrender.com/student/all-students';
+
+
 
     axios
       .get(url, {
@@ -29,7 +31,8 @@ const Students = () => {
 
   const getCourses = () => {
     axios
-      .get('http://localhost:4200/course/all-courses', {
+      .get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }

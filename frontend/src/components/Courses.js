@@ -17,11 +17,12 @@ const Courses = () => {
   }, []);
 
   const getCourses = () => {
-    axios.get('http://localhost:4200/course/all-courses', {
+    axios.get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
+
     .then(res => {
       console.log(res.data.courses);
       setCourseList(res.data.courses);

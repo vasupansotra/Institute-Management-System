@@ -28,16 +28,20 @@ const Signup = () => {
     formData.append('phone',phone);
     formData.append('password',password);
     formData.append('image',image);
-    axios.post('http://localhost:4200/user/signup',formData)
-    .then(res=>{
+
+    axios
+      .post('https://ims-backend-vsr9.onrender.com/user/signup', formData)
+.then(res=>{
       setLoading(false);
+
       toast.success('Your Account is Created...');
       navigate('/login')
       console.log(res)
     })
     .catch(err=>{
       setLoading(false);
-      toast.error('something is wrong...')
+      const apiMsg = err?.response?.data?.error || err?.response?.data?.msg || err?.message;
+      toast.error(apiMsg || 'something is wrong...');
       console.log(err)
     })
   }

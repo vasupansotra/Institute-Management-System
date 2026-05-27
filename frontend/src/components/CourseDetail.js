@@ -15,7 +15,8 @@ const CourseDetail = () => {
 
   const getCourseDetail = () => {
     axios
-      .get(`http://localhost:4200/course/course-detail/${id}`, {
+      .get(`https://ims-backend-vsr9.onrender.com/course/course-detail/${id}`, {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }

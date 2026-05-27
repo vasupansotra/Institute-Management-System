@@ -20,7 +20,8 @@ const CollectFee = () => {
 
   const getCourses = () => {
     axios
-      .get('http://localhost:4200/course/all-courses', {
+      .get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -42,7 +43,8 @@ const CollectFee = () => {
 
     // Backend provides student list via course detail (students found by courseId)
     axios
-      .get(`http://localhost:4200/course/course-detail/${selectedCourseId}`, {
+      .get(`https://ims-backend-vsr9.onrender.com/course/course-detail/${selectedCourseId}`, {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -92,7 +94,8 @@ const CollectFee = () => {
 
     axios
       .post(
-        'http://localhost:4200/fee/add-fee',
+        'https://ims-backend-vsr9.onrender.com/fee/add-fee',
+
         {
           fullName,
           phone,

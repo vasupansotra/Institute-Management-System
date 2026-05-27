@@ -7,7 +7,8 @@ const PaymentHistory = () => {
 
   const getPaymentHistory = () => {
     axios
-      .get('http://localhost:4200/fee/payment-history', {
+      .get('https://ims-backend-vsr9.onrender.com/fee/payment-history', {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
