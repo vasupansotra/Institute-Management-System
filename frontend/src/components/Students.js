@@ -9,8 +9,10 @@ const Students = () => {
 
   const getStudents = () => {
     const url = courseIdFilter
-      ? `http://localhost:4200/student/all-students/${courseIdFilter}`
-      : 'http://localhost:4200/student/all-students';
+? `${process.env.REACT_APP_API_BASE_URL}/student/all-students/${courseIdFilter}`
+      : `${process.env.REACT_APP_API_BASE_URL}/student/all-students`;
+
+
 
     axios
       .get(url, {
@@ -29,7 +31,8 @@ const Students = () => {
 
   const getCourses = () => {
     axios
-      .get('http://localhost:4200/course/all-courses', {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -89,4 +92,3 @@ const Students = () => {
 };
 
 export default Students;
-

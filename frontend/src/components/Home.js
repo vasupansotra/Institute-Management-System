@@ -12,11 +12,12 @@ const Home = () => {
   const getDashboardData = () => {
     // counts
     axios
-      .get('http://localhost:4200/course/all-courses', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
       })
+
       .then((res) => {
         const courses = res.data.courses || [];
         setCourseCount(courses.length);
@@ -26,11 +27,12 @@ const Home = () => {
       });
 
     axios
-      .get('http://localhost:4200/student/all-students', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/student/all-students`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
       })
+
       .then((res) => {
         const students = res.data.students || [];
         setStudentCount(students.length);
@@ -43,7 +45,8 @@ const Home = () => {
       });
 
     axios
-      .get('http://localhost:4200/fee/payment-history', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/fee/payment-history`, {
+
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -146,5 +149,3 @@ const Home = () => {
 };
 
 export default Home;
-
-

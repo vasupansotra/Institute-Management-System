@@ -20,10 +20,10 @@ const CollectFee = () => {
 
   const getCourses = () => {
     axios
-      .get('http://localhost:4200/course/all-courses', {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
         headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        },
       })
       .then((res) => {
         const courses = res.data.courses || [];
@@ -40,17 +40,18 @@ const CollectFee = () => {
     if (!selectedCourseId) return;
     setFetchingStudents(true);
 
-    // Backend provides student list via course detail (students found by courseId)
     axios
-      .get(`http://localhost:4200/course/course-detail/${selectedCourseId}`, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/course/course-detail/${selectedCourseId}`,
+        {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token'),
+          },
         }
-      })
+      )
       .then((res) => {
         setStudentList(res.data.studentList || []);
         if (res.data.studentList?.length) {
-          // pick first
           const first = res.data.studentList[0];
           setSelectedPhone(first.phone);
         }
@@ -92,27 +93,25 @@ const CollectFee = () => {
 
     axios
       .post(
-        'http://localhost:4200/fee/add-fee',
+        `${process.env.REACT_APP_API_BASE_URL}/fee/add-fee`,
         {
           fullName,
           phone,
           courseId: selectedCourseId,
           amount: Number(amount),
-          remark
+          remark,
         },
         {
           headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('token')
-          }
+            Authorization: 'Bearer ' + localStorage.getItem('token'),
+          },
         }
       )
-      .then((res) => {
+      .then(() => {
         setLoading(false);
         toast.success('Fee collected successfully!');
         setAmount('');
         setRemark('');
-
-        // notify PaymentHistory/transaction lists if they listen
         window.dispatchEvent(new Event('payment_updated'));
       })
       .catch((err) => {
@@ -186,4 +185,3 @@ const CollectFee = () => {
 };
 
 export default CollectFee;
-

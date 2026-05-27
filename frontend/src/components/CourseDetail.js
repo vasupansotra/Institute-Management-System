@@ -15,11 +15,14 @@ const CourseDetail = () => {
 
   const getCourseDetail = () => {
     axios
-      .get(`http://localhost:4200/course/course-detail/${id}`, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/course/course-detail/${id}`,
+        {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token'),
+          },
         }
-      })
+      )
       .then((res) => {
         setCourse(res.data.course);
         setStudentList(res.data.studentList || []);
@@ -37,7 +40,9 @@ const CourseDetail = () => {
   return (
     <div style={{ padding: 10 }}>
       <h1 style={{ margin: 0 }}>{course.courseName}</h1>
-      <p style={{ margin: '8px 0', fontWeight: 700, color: '#f65164' }}>Rs. {course.price} only</p>
+      <p style={{ margin: '8px 0', fontWeight: 700, color: '#f65164' }}>
+        Rs. {course.price} only
+      </p>
 
       <div style={{ marginTop: 10, display: 'flex', gap: 15, flexWrap: 'wrap' }}>
         {course.imageUrl && (
@@ -49,7 +54,9 @@ const CourseDetail = () => {
         )}
 
         <div style={{ flex: 1, minWidth: 280 }}>
-          {course.description && <p style={{ margin: 0, color: '#555' }}>{course.description}</p>}
+          {course.description && (
+            <p style={{ margin: 0, color: '#555' }}>{course.description}</p>
+          )}
           {(course.startingDate || course.endDate) && (
             <p style={{ marginTop: 10, color: '#777', fontSize: 13 }}>
               {course.startingDate ? `Start: ${course.startingDate}` : ''}
@@ -64,7 +71,13 @@ const CourseDetail = () => {
       <div className='course-wrapper' style={{ marginTop: 10 }}>
         {studentList.map((s) => (
           <div className='course-box' key={s._id}>
-            {s.imageUrl && <img className='course-thumbnail' src={s.imageUrl} alt={s.fullName} />}
+            {s.imageUrl && (
+              <img
+                className='course-thumbnail'
+                src={s.imageUrl}
+                alt={s.fullName}
+              />
+            )}
             <div className='course-content'>
               <h2 className='course-title'>{s.fullName}</h2>
               <p className='course-price'>{s.phone}</p>
@@ -77,4 +90,3 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
-

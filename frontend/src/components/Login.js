@@ -18,7 +18,7 @@ const Login = () => {
     event.preventDefault();
     setLoading(true);
     // console.log(fullName,email,phone,password,image)
-    axios.post('http://localhost:4200/user/login',{
+axiom.post(`${process.env.REACT_APP_API_BASE_URL}/user/login`,{
       email:email,
       password:password
     })
@@ -38,7 +38,8 @@ const Login = () => {
     })
     .catch(err=>{
       setLoading(false);
-      toast.error('something is wrong...')
+      const apiMsg = err?.response?.data?.error || err?.response?.data?.msg || err?.message;
+      toast.error(apiMsg || 'something is wrong...');
       console.log(err)
     })
   }

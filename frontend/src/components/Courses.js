@@ -17,11 +17,12 @@ const Courses = () => {
   }, []);
 
   const getCourses = () => {
-    axios.get('http://localhost:4200/course/all-courses', {
+axiom.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
+
     .then(res => {
       console.log(res.data.courses);
       setCourseList(res.data.courses);
@@ -55,4 +56,3 @@ const Courses = () => {
 };
 
 export default Courses;
-
