@@ -1,0 +1,413 @@
+/* signup and login */
+.signup-wrapper
+{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F7FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.signup-box
+{
+    width: 80%;
+    height: 80vh;
+    /* background-color:red; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.signup-left
+{
+    width: 50%;
+    background-color: #7033ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup-left-heading
+{
+    color: white;
+    font-size: 15px;
+    
+}
+
+.signup-right
+{
+    width: 50%;
+    padding: 10px;
+}
+.form
+{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.form input
+{
+    padding: 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    width: 80%;
+    font-size: 15px;
+    height: 45px;
+}
+.form button
+{
+    background-color: #f65164;
+    padding: 10px;
+    color: white;
+    width: 80%;
+    border-radius: 10px;
+    height: 45px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.your-logo
+{
+    height: 100px;
+}
+.link
+{
+    color: #7033ff;
+    text-decoration: none;
+    margin-top: 20px;
+
+}
+
+
+/* ---------------------dashboard--------------- */
+.dashboard-main-container
+{
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+    background: linear-gradient(to right,#cab3ff,rgb(221, 221, 250));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container
+{
+    height: 95vh;
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.nav-container
+{
+    width: 20%;
+    height: 95vh;
+    background-color: rgb(89, 89, 240);
+    padding: 10px;
+}
+.main-container
+{
+     width: 80%;
+    height: 95vh;
+    background-color: white;
+}
+.top-bar
+{
+    height: 80px;
+    width: 100%;
+    background-color: #F5F7FB;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 20px;
+}
+.logo-container
+{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.profile-logo
+{
+    width: 50px;
+    height: 50px;
+}
+
+
+.profile-container
+{
+    /* height: 80px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: green; */
+    padding: 10px;
+}
+.profile-name
+{
+    font-size: 15px;
+}
+.logout-btn
+{
+    background-color: #558b30;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.brand-container
+{
+    height: 100px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.brand-name
+{
+    color: white;
+    font-size: 13px;
+}
+.brand-slogan
+{
+    font-size: 10px;
+    color: yellow;
+    position: relative;
+
+}
+
+/* .............menu........... */
+.menu-container
+{
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+.menu-link
+{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 15px;
+    /* background-color: red; */
+    width: 90%;
+    border-radius: 5px;
+}
+.menu-active-link
+{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 15px;
+    /* background-color: red; */
+    width: 90%;
+    border-radius: 5px;
+     background-color: rgba(26, 36, 122, 0.5);
+}
+.menu-link:hover
+{
+    background-color: rgba(26, 36, 122, 0.5);
+    transition: 0.5s;
+}
+.fa-solid
+{
+    margin-right: 10px !important;
+}
+.contact-us
+{
+    position: absolute;
+    bottom: 5vh;
+    color: yellow;
+}
+.outlet-area
+{
+    padding: 10px;
+}
+
+/* home */
+.home-wrapper{
+    width: 100%;
+    padding: 10px;
+}
+.home-stats-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.home-stat{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.home-stat-num{
+    font-size: 22px;
+    font-weight: 800;
+    color: #7033ff;
+}
+.home-stat-label{
+    font-size: 16px;
+    font-weight: 700;
+}
+.home-stat-sub{
+    font-size: 14px;
+    color: #777;
+    margin-top: 6px;
+    font-weight: 700;
+}
+.home-stat-amount .home-stat-num,
+.home-stat-amount .home-stat-sub{
+    color: #f65164;
+}
+.home-student-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.home-student-card{
+    width: 23%;
+    min-width: 240px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.home-student-top{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.home-student-avatar-wrap{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-student-avatar{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+.home-student-avatar-placeholder{
+    width: 45px;
+    height: 45px;
+}
+.home-student-name{
+    font-weight: 800;
+    font-size: 14px;
+}
+.home-student-phone,
+.home-student-email{
+    font-size: 12px;
+    color: #777;
+    margin-top: 3px;
+}
+.home-student-tx{
+    border-top: 1px solid #f5f5f5;
+    padding-top: 10px;
+}
+.home-student-tx-line{
+    margin: 6px 0;
+    font-size: 12px;
+    color: #444;
+}
+.home-student-tx-label{
+    font-weight: 800;
+    color: #7033ff;
+    margin-right: 6px;
+}
+
+/* courses */
+.course-price,
+.course-title{
+    line-height: 1.1;
+}
+.course-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.course-box{
+    width: 32%;
+    height: 32vh;
+    background-color: #eee;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-box:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+.course-thumbnail{
+    width: 100%;
+    height: 22vh;
+    object-fit: cover;
+}
+.course-content{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: white;
+    height: 10vh;
+    overflow: hidden;
+}
+.course-title{
+    font-size: 14px;
+    margin: 0;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.course-price{
+    margin: 0;
+    font-weight: 700;
+    color: #f65164;
+    font-size: 13px;
+}
+.course-description{
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+/* .course-meta{
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+} */
