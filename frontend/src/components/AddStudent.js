@@ -15,10 +15,10 @@ const AddStudent = () => {
 
   const [courseList, setCourseList] = useState([]);
 
-  useEffect(() => {
-    getCourses();
-  }, []);
-
+useEffect(() => {
+  getCourses();
+}, [getCourses]);
+  
   const getCourses = () => {
     axios
       .get('http://localhost:4200/course/all-courses', {
