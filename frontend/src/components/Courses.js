@@ -17,20 +17,19 @@ const Courses = () => {
   }, []);
 
   const getCourses = () => {
-axios.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-
-    .then(res => {
-      console.log(res.data.courses);
-      setCourseList(res.data.courses);
-    })
-    .catch(err => {
-      console.log(err);
-      toast.error('something is wrong...');
-    });
+      .then(res => {
+        console.log(res.data.courses);
+        setCourseList(res.data.courses);
+      })
+      .catch(err => {
+        console.log(err);
+        toast.error('something is wrong...');
+      });
   };
 
   return (
@@ -56,4 +55,3 @@ axios.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
 };
 
 export default Courses;
-

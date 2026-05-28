@@ -185,4 +185,3 @@ const CollectFee = () => {
 };
 
 export default CollectFee;
-

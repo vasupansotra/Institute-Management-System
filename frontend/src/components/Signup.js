@@ -29,21 +29,21 @@ const Signup = () => {
     formData.append('password',password);
     formData.append('image',image);
 
-axios
+    axios
       .post(`${process.env.REACT_APP_API_BASE_URL}/user/signup`, formData)
-.then(res=>{
-      setLoading(false);
+      .then(res=>{
+        setLoading(false);
 
-      toast.success('Your Account is Created...');
-      navigate('/login')
-      console.log(res)
-    })
-    .catch(err=>{
-      setLoading(false);
-      const apiMsg = err?.response?.data?.error || err?.response?.data?.msg || err?.message;
-      toast.error(apiMsg || 'something is wrong...');
-      console.log(err)
-    })
+        toast.success('Your Account is Created...');
+        navigate('/login')
+        console.log(res)
+      })
+      .catch(err=>{
+        setLoading(false);
+        const apiMsg = err?.response?.data?.error || err?.response?.data?.msg || err?.message;
+        toast.error(apiMsg || 'something is wrong...');
+        console.log(err)
+      })
   }
 
   const fileHandler =(e)=>{
