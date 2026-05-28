@@ -4,15 +4,25 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
+require('dotenv').config();
 
 
+// CORS configuration - must be before routes
+const corsOptions = {
+  origin: ['https://institute-management-system1419.vercel.app', 'https://institute-management-system-hzbj.vercel.app', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
+
+console.log('Connecting to MongoDB...');
 mongoose.connect('mongodb+srv://vasu1419:dT1yr6RXV6JiYWE6@cluster0.wwfknql.mongodb.net/?appName=Cluster0')
 .then(()=>{
     console.log('connected with database')
 })
 .catch(err=>{
-    console.log('error',err)
+    console.log('error connecting to database:',err)
 })
 
 
@@ -22,11 +32,8 @@ const studentRoute = require('./routes/student');
 const feeRoute = require('./routes/fee');
 
 
+app.use(cors(corsOptions));
 app.use(bodyParser.json())
-app.use(cors({
-  origin: ['https://institute-management-system1419.vercel.app', 'https://institute-management-system-hzbj.vercel.app', 'http://localhost:3000'],
-  credentials: true
-}))
 app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
