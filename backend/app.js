@@ -24,7 +24,7 @@ const feeRoute = require('./routes/fee');
 
 app.use(bodyParser.json())
 app.use(cors({
-  origin: ['https://institute-management-system-hzbj.vercel.app', 'http://localhost:3000'],
+  origin: ['https://institute-management-system1419.vercel.app', 'https://institute-management-system-hzbj.vercel.app', 'http://localhost:3000'],
   credentials: true
 }))
 app.use(fileUpload({
