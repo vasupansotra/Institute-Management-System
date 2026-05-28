@@ -29,8 +29,8 @@ const Signup = () => {
     formData.append('password',password);
     formData.append('image',image);
 
-    axios
-      .post('https://ims-backend-vsr9.onrender.com/user/signup', formData)
+axios
+      .post(`${process.env.REACT_APP_API_BASE_URL}/user/signup`, formData)
 .then(res=>{
       setLoading(false);
 

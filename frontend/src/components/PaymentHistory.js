@@ -7,11 +7,10 @@ const PaymentHistory = () => {
 
   const getPaymentHistory = () => {
     axios
-      .get('https://ims-backend-vsr9.onrender.com/fee/payment-history', {
-
+      .get(`${process.env.REACT_APP_API_BASE_URL}/fee/payment-history`, {
         headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        },
       })
       .then((res) => {
         setPaymentHistory(res.data.paymentHistory || []);

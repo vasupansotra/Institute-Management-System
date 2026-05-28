@@ -4,7 +4,7 @@ const cloudinary = require('cloudinary').v2;
 require('dotenv').config();
 const User = require('../model/User');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 cloudinary.config({

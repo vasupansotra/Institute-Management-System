@@ -9,8 +9,8 @@ const Students = () => {
 
   const getStudents = () => {
     const url = courseIdFilter
-      ? `https://ims-backend-vsr9.onrender.com/student/all-students/${courseIdFilter}`
-      : 'https://ims-backend-vsr9.onrender.com/student/all-students';
+? `${process.env.REACT_APP_API_BASE_URL}/student/all-students/${courseIdFilter}`
+      : `${process.env.REACT_APP_API_BASE_URL}/student/all-students`;
 
 
 
@@ -31,7 +31,7 @@ const Students = () => {
 
   const getCourses = () => {
     axios
-      .get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
 
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')

@@ -12,7 +12,7 @@ const Home = () => {
   const getDashboardData = () => {
     // counts
     axios
-      .get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -27,7 +27,7 @@ const Home = () => {
       });
 
     axios
-      .get('https://ims-backend-vsr9.onrender.com/student/all-students', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/student/all-students`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -45,7 +45,7 @@ const Home = () => {
       });
 
     axios
-      .get('https://ims-backend-vsr9.onrender.com/fee/payment-history', {
+.get(`${process.env.REACT_APP_API_BASE_URL}/fee/payment-history`, {
 
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')

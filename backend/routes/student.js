@@ -19,7 +19,11 @@ router.post('/add-student', checkAuth, (req, res) => {
     const verify = jwt.verify(token, '123');
 
     cloudinary.uploader.upload(req.files.image.tempFilePath, (err, result) => {
-
+        if (err) {
+            return res.status(500).json({
+                error: err
+            });
+        }
 
         const newStudent = new Student({
             _id: new mongoose.Types.ObjectId,
@@ -199,7 +203,7 @@ router.get('/latest-students',checkAuth,(req,res)=>{
     // .select('_id uId fullName phone address email courseId imageUrl imageId')
     .sort({$natural:-1}).limit(5)
     .then(result=>{
-        res.status(500).json({
+        res.status(200).json({
             students:result
         })
     })

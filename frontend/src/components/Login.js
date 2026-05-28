@@ -18,7 +18,7 @@ const Login = () => {
     event.preventDefault();
     setLoading(true);
     // console.log(fullName,email,phone,password,image)
-    axios.post('https://ims-backend-vsr9.onrender.com/user/login',{
+axios.post(`${process.env.REACT_APP_API_BASE_URL}/user/login`,{
       email:email,
       password:password
     })

@@ -17,7 +17,7 @@ const Courses = () => {
   }, []);
 
   const getCourses = () => {
-    axios.get('https://ims-backend-vsr9.onrender.com/course/all-courses', {
+axios.get(`${process.env.REACT_APP_API_BASE_URL}/course/all-courses`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
