@@ -23,6 +23,7 @@ const SideNav = () => {
         <Link to='/dashboard/add-student' className={location.pathname==='/dashboard/add-student'?'menu-active-link':'menu-link'}> <i className="fa-solid fa-plus"> </i>Add Student</Link>
         <Link to='/dashboard/collect-fee' className={location.pathname==='/dashboard/collect-fee'?'menu-active-link':'menu-link'}> <i className="fa-solid fa-money-check-dollar"></i> Collect Fee</Link>
         <Link to='/dashboard/payment-history' className={location.pathname==='/dashboard/payment-history'?'menu-active-link':'menu-link'}> <i className="fa-solid fa-receipt"></i> Payment History</Link>
+        <Link to='/dashboard/ai-chat' className={location.pathname==='/dashboard/ai-chat'?'menu-active-link':'menu-link'}> <i className="fa-solid fa-robot"></i> AI Assistant</Link>
         </div>
         
         <div className='contact-us'>

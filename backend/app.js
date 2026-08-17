@@ -30,6 +30,7 @@ const userRoute = require('./routes/user');
 const courseRoute = require('./routes/course');
 const studentRoute = require('./routes/student');
 const feeRoute = require('./routes/fee');
+const aiRoute = require('./routes/ai');
 
 
 app.use(cors(corsOptions));
@@ -44,6 +45,7 @@ app.use('/user',userRoute);
 app.use('/course',courseRoute);
 app.use('/student',studentRoute);
 app.use('/fee',feeRoute);
+app.use('/api/ai',aiRoute);
 
 app.use('*',(req,res)=>{
     res.status(404).json({

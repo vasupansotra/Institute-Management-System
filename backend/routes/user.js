@@ -55,7 +55,8 @@ router.post('/signup', (req, res) => {
                             email: req.body.email,
                             password: hash,
                             imageUrl: result.secure_url,
-                            imageId: result.public_id
+                            imageId: result.public_id,
+                            role: req.body.role || 'student'
                         });
 
                         newUser.save()
@@ -120,6 +121,7 @@ router.post('/login', (req, res) => {
                         email: users[0].email,
                         imageUrl: users[0].imageUrl,
                         imageId: users[0].imageId,
+                        role: users[0].role,
                         token
                     });
                 });

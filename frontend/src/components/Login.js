@@ -27,9 +27,11 @@ const Login = () => {
       // toast.success('Welcome...');
 
       localStorage.setItem('token',res.data.token)
-      // backend field name might be fullName or fulName (typo)
-      localStorage.setItem('fullName', res.data.fullName ?? res.data.fulName)
-
+      localStorage.setItem('uId', res.data.uId)
+      localStorage.setItem('fullName', res.data.fullName)
+      localStorage.setItem('email', res.data.email)
+      localStorage.setItem('phone', res.data.phone)
+      localStorage.setItem('role', res.data.role || 'student')
       localStorage.setItem('imageUrl',res.data.imageUrl)
       localStorage.setItem('imageId',res.data.imageId)
 

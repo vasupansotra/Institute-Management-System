@@ -14,6 +14,7 @@ import CollectFee from './components/CollectFee'
 import PaymentHistory from './components/PaymentHistory'
 import CourseDetail from './components/CourseDetail'
 import StudentDetail from './components/StudentDetail'
+import AIChat from './components/AIChat'
 
 
 const App = () => {
@@ -31,7 +32,8 @@ const App = () => {
       {path:'student-detail/:id',Component:StudentDetail},
       {path:'add-student',Component:AddStudent},
       {path:'collect-fee',Component:CollectFee},
-      {path:'payment-history',Component:PaymentHistory}
+      {path:'payment-history',Component:PaymentHistory},
+      {path:'ai-chat',Component:AIChat}
     ]}
   ])
   return (
